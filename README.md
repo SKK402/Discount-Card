@@ -1,158 +1,89 @@
-# 🪪 Discount Card Smart Contract (Solidity)
+# 🪪 DiscountCard Smart Contract
 
-A simple and beginner-friendly **Solidity smart contract** that allows an owner to issue, manage, and revoke digital **discount cards** for users on the blockchain. Users can redeem their discount a limited number of times in a fully transparent and decentralized way.
+A simple and beginner-friendly Ethereum smart contract that allows an owner to issue, manage, and revoke digital discount cards for users. Users can redeem their discount a limited number of times directly on the blockchain.
+
+This project is ideal for learning the basics of:
+- Solidity
+- Smart contract deployment
+- Mappings and structs
+- Access control
+- Events and state management
 
 ---
 
-## 📌 Project Description
+## 📖 Project Description
 
-This project implements a **blockchain-based discount card system** using Solidity.  
-Instead of using physical cards or centralized databases, this contract stores discount cards **on-chain**, making them:
+The DiscountCard smart contract is a basic blockchain-based loyalty and discount system. Instead of using physical discount cards, this contract enables digital discount cards that are securely stored and managed on the Ethereum blockchain.
 
-- Transparent ✅  
-- Tamper-proof ✅  
-- Trustless ✅  
+The contract is owned by a single administrator (the deployer), who can issue discount cards to users with a specific discount percentage and a limited number of uses. Each user can then redeem their card until all uses are exhausted.
 
-Only the **contract owner** can issue or remove cards, while **users can securely redeem their own discounts**.
-
-This project is ideal for:
-- Learning basic Solidity concepts
-- Understanding mappings and structs
-- Working with events
-- Practicing smart contract deployment
+This project is built for educational purposes and as a foundation for real-world blockchain-based loyalty systems.
 
 ---
 
 ## ⚙️ What It Does
 
-- The **owner deploys the contract** (no constructor input required).
-- The **owner gives a discount card** to any user.
-- Each card has:
-  - A **discount percentage**
-  - A **limited number of uses**
-  - An **active/inactive status**
-- The **user redeems the card** using `useMyCard()`.
-- After all uses are exhausted, the card automatically becomes inactive.
-- The **owner can remove a card at any time**.
-- Anyone can **view their own card details**.
+- The contract deployer becomes the **owner** of the system.
+- The owner can:
+  - Issue discount cards to users.
+  - Set discount percentage and number of uses.
+  - Remove (deactivate) any user’s card.
+- Users can:
+  - Use their discount card.
+  - Check their own card details.
+- Each time a card is used:
+  - The usage count is reduced.
+  - When the usage count reaches zero, the card is automatically deactivated.
+
+All actions are recorded on the blockchain using events.
 
 ---
 
 ## ✨ Features
 
-- ✅ No input required during deployment  
-- ✅ Owner-controlled card issuance  
-- ✅ User-controlled card usage  
-- ✅ Automatic expiration after usage limit  
-- ✅ Fully on-chain storage  
-- ✅ Public card visibility via mapping  
-- ✅ Event logging for:
-  - Card creation
-  - Card usage
-  - Card removal  
-- ✅ Very beginner-friendly logic  
-- ✅ Gas-optimized with Solidity `^0.8.x`  
+- ✅ Simple and beginner-friendly Solidity code
+- ✅ No constructor inputs required
+- ✅ Owner-only card issuance and removal
+- ✅ User-based discount redemption
+- ✅ Automatic deactivation after last use
+- ✅ Transparent on-chain event logs
+- ✅ Public card lookup using wallet address
+- ✅ Secure access control using onlyOwner modifier
 
 ---
 
-## 📄 Smart Contract Overview
+## 🔗 Deployed Smart Contract Link
 
-### Main Functions
-
-- `giveCard(address user, uint discount, uint uses)`  
-  → Owner gives a discount card to a user.
-
-- `useMyCard()`  
-  → User redeems their discount once.
-
-- `removeCard(address user)`  
-  → Owner disables a user’s card.
-
-- `myCard()`  
-  → User checks their own card details.
-
-- `cards(address user)`  
-  → Public read access to any user’s card.
-
----
-
-## 🔗 Deployed Smart Contract
-
-**Contract Address:**
-
-```
+Contract Address:
 0xCD62eCF30ed073F01997f092639b4e4eC0C7aCae
-```
 
-You can verify and interact with this contract using a blockchain explorer like Etherscan or through Remix using the **“At Address”** feature.
-
----
-
-## 🧪 How to Test in Remix (Beginner Steps)
-
-1. Open **Remix IDE**
-2. Create a new file: `discount.sol`
-3. Paste your contract code:
-   ```solidity
-   //paste your code
-   ```
-4. Select compiler:
-   ```
-   0.8.30+commit.73712a01
-   ```
-5. Click **Compile**
-6. Go to **Deploy & Run**
-7. Select **Injected Web3**
-8. Click **Deploy**
-9. Interact using:
-   - `giveCard()`
-   - `useMyCard()`
-   - `myCard()`
+You can view the contract on a block explorer by pasting this address into your network’s explorer (e.g., Etherscan / Sepolia Etherscan).
 
 ---
 
-## 🛠️ Tech Stack
+## 📄 Smart Contract Code
 
-- **Language:** Solidity  
-- **Compiler Version:** `0.8.30`  
-- **EVM Version:** Shanghai  
-- **Optimizer:** Enabled (200 runs)  
-- **Network:** XXX  
-- **Wallet:** MetaMask  
-- **IDE:** Remix  
+// SPDX-License-Identifier: MIT  
+pragma solidity ^0.8.19;  
 
----
-
-## 📚 Use Cases
-
-- Digital loyalty cards  
-- Student or employee discount systems  
-- Event entry passes  
-- Web3-based coupons  
-- Blockchain learning projects  
+//paste your code
 
 ---
 
 ## 🚀 Future Improvements (Optional Ideas)
 
-- Add **expiry time** to each card
-- Add **merchant roles**
-- Add **NFT-based discount cards**
-- Add **frontend using React + Ethers.js**
-- Add **payment integration**
+- Add expiry date to discount cards
+- Add merchant verification
+- Add NFT-based discount cards
+- Add frontend UI with wallet connection
+- Add multiple admin roles
 
 ---
 
 ## 🧑‍💻 Author
 
-Built with ❤️ for learning Web3 and Solidity.
+Built as a beginner blockchain project for learning Solidity and smart contract deployment.
 
 ---
 
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
----
-
-### ⭐ If you like this project, give it a star on GitHub!
+⭐ If you found this project helpful, feel free to star the repository!
